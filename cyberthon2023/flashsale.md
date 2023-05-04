@@ -4,6 +4,8 @@ category: web
 
 requires: race condition
 
+we are given `main.py`:
+
 ```py
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
@@ -92,7 +94,10 @@ async def sell_item(request: ItemRequest):
 
     return {"msg": f"You sold a {request.item}"}
 ```
-ok so when user gets initialized we only get 1 point, but we need 10 points to buy a flag :( ...
+
+so this is just a shop we can post requests to, to buy and sell stuff. cool.
+
+but when user gets initialized we only get 1 point, and we need 10 points to buy a flag :( ...
 
 so we begin looking around for the sussy in the code and theres just a random `await asyncio.sleep(0.1)`, when buying something it checks sufficient points -> waits 0.1s -> adds it
 
