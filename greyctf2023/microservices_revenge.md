@@ -31,7 +31,7 @@ so basically the filter works for cookies but not for query parameters
 
 so we set `?code=_` (`_` is banned) and we can then access it from the cookie with `{% set us = request.args.code %}`
 
-then we just use `urllib` to get the flag
+then its just standard template injection vuln, just use `urllib` to get the flag
 
 in conclusion:
 1. set cookie `user` to `
