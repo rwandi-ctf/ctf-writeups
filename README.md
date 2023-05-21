@@ -1,2 +1,4 @@
 # ctf-writeups
-writeups for california tomato farmers
+random stuff
+
+nothing here because we're still incompetent
