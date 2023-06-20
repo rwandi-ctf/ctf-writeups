@@ -40,11 +40,12 @@ yeah there are only 16 digits in hex and they get repeated quite often, so we ar
 ecdsa:
 
 $$r = (kG).x$$
+
 $$s = k^{-1} (h + rd)$$
 
 where k is a random nonce generated, h is the hashed message, and d is the private key
 
-when comparing between two signatures of the same message, we can see that h and d remain the same, while r is known. so, how to deal with k? seeing that we have $k$ and $k^-1$, yeah its quite obvious
+when comparing between two signatures of the same message, we can see that h and d remain the same, while r is known. so, how to deal with k? seeing that we have $k$ and $k^{-1}$, yeah its quite obvious
 
 $$R * s = kG * k^{-1} (h + rd) = G (h+rd)$$
 

@@ -16,11 +16,11 @@ i actually tried a lot of things at first like brute force and greedy from right
 
 first realisation comes when i realised that a bytestring `b'abc'` can be represented as
 
-$2^{16}*$ `b'a'`$+2^8*$ `b'b'` $+2^0 *$ `b'c'`
+$2^{16}\cdot$ `b'a'`$+2^8\cdot$ `b'b'` $+2^0 \cdot$ `b'c'`
 
 so essentially you are trying to solve for
 
-`b'SEE{...}'`$+ \sum_{i=1}^{23} 2^{8i} x_i \equiv 0 \pmod{13^{37}}$
+`b'SEE{...}'` $ + \sum_{i=1}^{23} 2^{8i} x_i \equiv 0 \pmod{13^{37}}$
 
 where all of $x_i$ satisfies `\w`
 
@@ -64,9 +64,7 @@ $$
 \end{bmatrix}
 $$
 
-which would return some vectors looking like $\begin{bmatrix}
-    a & b & c & ax_1 + bx_2 + cx_3
-\end{bmatrix}$, so similarly, here we can do
+which would return some vectors looking like $ \begin{bmatrix}a & b & c & ax_1 + bx_2 + cx_3 \end{bmatrix}$, so similarly, here we can do
 
 $$
 \begin{bmatrix}
