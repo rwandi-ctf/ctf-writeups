@@ -64,15 +64,19 @@ $$
 \end{bmatrix}
 $$
 
-which would return some vectors looking like $ \begin{bmatrix}a & b & c & ax_1 + bx_2 + cx_3 \end{bmatrix}$, so similarly, here we can do
+which would return some vectors looking like 
+
+$$\begin{bmatrix}a & b & c & ax_1 + bx_2 + cx_3 \end{bmatrix}$$
+
+, so similarly, here we can do
 
 $$
 \begin{bmatrix}
-    1 & 0 & 0 & \dots  & 0 & 2^{8*23}  \\
-    0 & 1 & 0 & \dots  & 0 & 2^{8*22} \\
-    0 & 0 & 1 & \dots  & 0 & 2^{8*21} \\
+    1 & 0 & 0 & \dots  & 0 & 2^{8 \cdot 23}  \\
+    0 & 1 & 0 & \dots  & 0 & 2^{8 \cdot 22} \\
+    0 & 0 & 1 & \dots  & 0 & 2^{8 \cdot 21} \\
     \vdots & \vdots & \vdots & \ddots & \vdots \\
-    0 & 0 & 0 & \dots  & 1 & 2^{8*1} \\
+    0 & 0 & 0 & \dots  & 1 & 2^{8 \cdot 1} \\
 \end{bmatrix}
 $$
 
@@ -80,11 +84,11 @@ but since we are taking this $\pmod{13^{37}}$ we simply add another row to autom
 
 $$
 \begin{bmatrix}
-    1 & 0 & 0 & \dots  & 0 & 2^{8*23}  \\
-    0 & 1 & 0 & \dots  & 0 & 2^{8*22} \\
-    0 & 0 & 1 & \dots  & 0 & 2^{8*21} \\
+    1 & 0 & 0 & \dots  & 0 & 2^{8 \cdot 23}  \\
+    0 & 1 & 0 & \dots  & 0 & 2^{8 \cdot 22} \\
+    0 & 0 & 1 & \dots  & 0 & 2^{8 \cdot 21} \\
     \vdots & \vdots & \vdots & \ddots & \vdots \\
-    0 & 0 & 0 & \dots  & 1 & 2^{8*1} \\
+    0 & 0 & 0 & \dots  & 1 & 2^{8 \cdot 1} \\
     0 & 0 & 0 & \dots  & 0 & -13^{37} \\
 \end{bmatrix}
 $$
@@ -95,11 +99,11 @@ the way i did this is to basically "reward" it by adding $-1$ to the identity pa
 
 $$
 \begin{bmatrix}
-    1 & 0 & 0 & \dots  & 0 & 0 & 2^{8*23}  \\
-    0 & 1 & 0 & \dots  & 0 & 0 & 2^{8*22} \\
-    0 & 0 & 1 & \dots  & 0 & 0 & 2^{8*21} \\
+    1 & 0 & 0 & \dots  & 0 & 0 & 2^{8 \cdot 23}  \\
+    0 & 1 & 0 & \dots  & 0 & 0 & 2^{8 \cdot 22} \\
+    0 & 0 & 1 & \dots  & 0 & 0 & 2^{8 \cdot 21} \\
     \vdots & \vdots & \vdots & \ddots & \vdots \\
-    0 & 0 & 0 & \dots  & 1 & 0 & 2^{8*1} \\
+    0 & 0 & 0 & \dots  & 1 & 0 & 2^{8 \cdot 1} \\
     0 & 0 & 0 & \dots  & 0 & 0 & -13^{37} \\
     -1 & -1 & -1 & \dots  & -1 & 1 & c \\
 \end{bmatrix}
