@@ -1,8 +1,8 @@
 # onelinecrypto
 
-category: crypto
+Category: Crypto
 
-entire challenge:
+Entire Challenge:
 
 ## How to bypass this line?
 
@@ -10,23 +10,23 @@ entire challenge:
 assert __import__('re').fullmatch(r'SEE{\w{23}}',flag:=input()) and not int.from_bytes(flag.encode(),'big')%13**37
 ```
 
-so basically we need to find a string of the form `SEE{\w{23}}` which is divisible by $13^{37}$ in long form. how tf
+The assert statement will return an error if the condition given is not fulfilled otherwise nothing is returned. The first part of the condition is doing a regex match of the form `SEE{\w{23}}`, thus the flag contains 23 characters in the curly braces. The second part of the condition ensures that the flag is divisible by $13^{37}$ in long form. 
 
-i actually tried a lot of things at first like brute force and greedy from right to left, but didnt even come close
+I actually tried a lot of things at first like brute force and greedy from right to left, but they didn't even come close
 
-first realisation comes when i realised that a bytestring `b'abc'` can be represented as
+The first realisation comes when I realised that a bytestring `b'abc'` can be represented as
 
 $2^{16}\cdot$ `b'a'`$+2^8\cdot$ `b'b'` $+2^0 \cdot$ `b'c'`
 
 so essentially you are trying to solve for
 
-`b'SEE{...}'` $ + \sum_{i=1}^{23} 2^{8i} x_i \equiv 0 \pmod{13^{37}}$
+`b'SEE{...}'` $ + \sum_{i=1}^{23} 2^{8i} x_I \equiv 0 \pmod{13^{37}}$
 
 where all of $x_i$ satisfies `\w`
 
-by default i would have no idea how to implement this and it kinda looks impossible, but when trying this challenge i remembered hearing a lot of stuff about LLL to solve equations and i wanted to join in on the fun
+By default I would have no idea how to implement this and it kinda looks impossible, but when trying this challenge I remembered hearing a lot of stuff about LLL to solve equations and I wanted to join in on the fun
 
-so understanding LLL was quite the learning curve but essentially what it does is, given a lattice basis
+So understanding LLL was quite the learning curve but essentially what it does is, given a lattice basis
 
 $$
 \begin{bmatrix}
@@ -50,11 +50,11 @@ $$
 
 is as "short" as possible, i.e. minimize the abs of all the values
 
-this is definitely not totally correct but i havent fully figured it out
+This is definitely not totally correct but I havent fully figured it out
 
 anyways we can try to get LLL to help us find $x_i$ for us to make the total $\pmod{13^{37}}$ as close as possible to 0.
 
-usually to minimize $ax_1 + bx_2 + cx_3$ you can use the matrix
+Usually to minimize $ax_1 + bx_2 + cx_3$ you can use the matrix
 
 $$
 \begin{bmatrix}
@@ -95,7 +95,7 @@ $$
 
 but now we have to consider how we initially have the bits of `SEE{}` which we will use $c$ to represent. we need to add this to the final column, but the problem is, how do we ensure that this vector will be multiplied by 1?
 
-the way i did this is to basically "reward" it by adding $-1$ to the identity part of the matrix so that if it adds this row once those parts will "cancel" out nicely(unsure if needed). i also added another column so that i can check if this was added once
+The way I did this is to basically "reward" it by adding $-1$ to the identity part of the matrix so that if it adds this row once those parts will "cancel" out nicely(unsure if needed). I also added another column so that I can check if this was added once
 
 $$
 \begin{bmatrix}
@@ -109,48 +109,48 @@ $$
 \end{bmatrix}
 $$
 
-this way, if LLL finds a vector ending with $\begin{bmatrix}1&0\end{bmatrix}$, i'll know $c$ was only added once as that column only has a nonzero element in that row, and i'll also know that a valid solution for $x_i$ was found as the final column sums to 0.
+This way, if LLL finds a vector ending with $\begin{bmatrix}1&0\end{bmatrix}$, i'll know $c$ was only added once as that column only has a nonzero element in that row, and i'll also know that a valid solution for $x_i$ was found as the final column sums to 0.
 
-but as inspired by the example given on the wikipedia page for LLL, the sum of the final column being 0 matters a LOT, and is actually the only sum we care to minimize (other than keeping the 2nd last column at 1), so what we can do is multiply a weight to this column to make it more important to minimize.
+But as inspired by the example given on the wikipedia page for LLL, the sum of the final column being 0 matters a LOT, and is actually the only sum we care to minimize (other than keeping the 2nd last column at 1), so what we can do is multiply a weight to this column to make it more important to minimize.
 
-so, after doing testing, the first weights that worked for me was $2^{8*23}$ for the last 2 columns and $1$ for everything else. the implementation(sage):
+So, after doing testing, the first weights that worked for me was $2^{8*23}$ for the last 2 columns and $1$ for everything else. the implementation(sage):
 
 ```py
 start = (2**(8*24) * bytes_to_long(b"SEE{") + bytes_to_long(b"}"))
 W = diagonal_matrix([1]*23 + [2^(8*23), 2^(8*23)])
-i = Matrix.identity(23)
+I = Matrix.identity(23)
 right1 = Matrix([0] * 23).T
-right2 = Matrix([2^(8*i) for i in range(1, 24)]).T
+right2 = Matrix([2^(8*i) for I in range(1, 24)]).T
 bottom1 = Matrix([0] * 23 + [0, -13^37])
 bottom2 = Matrix([-1] * 23 + [1, start])
 L = i.augment(right1).augment(right2).stack(bottom1).stack(bottom2)
 sol = (L*W).LLL()/W
-for i in sol:
+for I in sol:
     print(i)
 ```
 
-and we actually get a row ending with $\begin{bmatrix}1&0\end{bmatrix}$, the final row, `(-19, 6, 1, -23, -3, -26, -6, -6, -16, 17, -24, -48, 16, 13, -22, -1, 11, 23, -38, 12, 6, 23, 7, 1, 0)`. i actually nearly shit my pants when i saw this but yeah
+and we actually get a row ending with $\begin{bmatrix}1&0\end{bmatrix}$, the final row, `(-19, 6, 1, -23, -3, -26, -6, -6, -16, 17, -24, -48, 16, 13, -22, -1, 11, 23, -38, 12, 6, 23, 7, 1, 0)`. 
 
-to get the solution from here we re-add the 1 subtracted in the last row to the first 23 numbers
+To get the solution from here we re-add the 1 subtracted in the last row to the first 23 numbers
 
 but anyways this still isnt the solution. quite obviously the values of $x_i$ here go into the negatives which dont make valid characters for the flag. what characters are even valid anyway?
 ```py
 good=""
-for i in string.printable:
+for I in string.printable:
     if __import__('re').fullmatch(r'\w', i):
         good+=i
 ```
 `0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_`
 
-yeah this is not a lot to work with but whatever. anyways, to make the values obtained more positive and around these values, i realised that since they are currently kind of distributed around 0, and i have to add 1 to compensate for the last row, what if i just make it so i have to add a lot more?
+Yeah this is not a lot to work with but whatever. anyways, to make the values obtained more positive and around these values, I realised that since they are currently kind of distributed around 0, and I have to add 1 to compensate for the last row, what if I just make it so I have to add a lot more?
 
-essentially, set those values to not -1 but like -90, so that after adding 90 i get nice values. doing this and adding back 90, we get the values
+Essentially, set those values to not -1 but like -90, so that after adding 90 I get nice values. doing this and adding back 90, we get the values
 
 `116, 76, 65, 94, 109, 94, 73, 93, 79, 75, 96, 109, 73, 75, 108, 68, 89, 46, 111, 58, 92, 46, 63` which are way nicer and almost look correct. but actually, 9 of these numbers are invalid characters
 
-from here, real hell began where i had to keep changing the offsets here and the weights to try to magically get a valid set of values. however, for unexplainable reasons i kept getting rows with 1 bad value (of 140 most of the time). this is probably because the challenge was set to make it so it was barely possible to find a valid string
+From here, real hell began where I had to keep changing the offsets here and the weights to try to magically get a valid set of values. however, for unexplainable reasons I kept getting rows with 1 bad value (of 140 most of the time). this is probably because the challenge was set to make it so it was barely possible to find a valid string
 
-anyways after a shit ton of experimentation, the final code that found the flag for me was
+Anyways after much experimentation, the final code that found the flag for me was
 
 
 ```py
@@ -158,9 +158,9 @@ found = False
 while not found:
     offsets = [-93] * 23
     W = diagonal_matrix([random.choice([9/10, 1, 11/10]) for _ in range(23)] + [2^(3), 2^(7)])
-    i = Matrix.identity(23)
+    I = Matrix.identity(23)
     right1 = Matrix([0] * 23).T
-    right2 = Matrix([2^(8*i) for i in range(1, 24)]).T
+    right2 = Matrix([2^(8*i) for I in range(1, 24)]).T
     bottom1 = Matrix([0] * 23 + [0, -13^37])
     bottom2 = Matrix(offsets + [1, start])
     L = i.augment(right1).augment(right2).stack(bottom1).stack(bottom2)

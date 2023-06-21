@@ -1,7 +1,7 @@
 # semaphore
-category: crypto
+Category: Crypto
 
-they give:
+They give:
 
 ```py
 import ecdsa # https://pypi.org/project/ecdsa/
@@ -15,9 +15,11 @@ for nibble in flag.hex():
     print(signature.hex())
 ```
 
-basically, for every digit in the flag's hex, they append that digit to the flag and then sign it with ecdsa, and print the signature. the thing is, 1. signatures are not meant to encrypt a message and 2. the fact that they randomly append a digit to the flag every time is highly suspicious
+Basically, for every digit in the flag's hex, they append that digit to the flag and then sign it with ecdsa, and print the signature. The thing is,
+ 1. Signatures are not meant to encrypt a message
+ 2. The fact that they randomly append a digit to the flag every time is highly suspicious
 
-so doing a little bit of testing we can see that 
+So doing a little bit of testing we can see that 
 
 ```py
 flag = b"SEE{"
@@ -35,9 +37,9 @@ b'SEE{b'
 """
 ```
 
-yeah there are only 16 digits in hex and they get repeated quite often, so we are signing the same message in some cases, but how to use this to our advantage?
+There are only 16 digits in hex and they get repeated quite often, so we are signing the same message in some cases, but how to use this to our advantage?
 
-ecdsa:
+ECDSA:
 
 $$r = (kG).x$$
 
@@ -45,15 +47,15 @@ $$s = k^{-1} (h + rd)$$
 
 where k is a random nonce generated, h is the hashed message, and d is the private key
 
-when comparing between two signatures of the same message, we can see that h and d remain the same, while r is known. so, how to deal with k? seeing that we have $k$ and $k^{-1}$, yeah its quite obvious
+When comparing between two signatures of the same message, we can see that h and d remain the same, while r is known. so, how to deal with k? Seeing that we have $k$ and $k^{-1}$, yeah its quite obvious
 
 $$R * s = kG * k^{-1} (h + rd) = G (h+rd)$$
 
-now, between two signatures of the same message, the only different variable is r, hence we can expect
+Now, between two signatures of the same message, the only different variable is r, hence we can expect
 
 $$s_1 - s_2 = G (h+r_1 d) - G(h+r_2 d) = G(r_1-r_2)d$$
 
-and yeah you can use this to basically identify each character by comparing it to a signature of that character, and checking whether the difference multiplied by $(r_1-r_2)^{-1}$ is $Gd$, which is the same throughout
+You can use this to basically identify each character by comparing it to a signature of that character, and checking whether the difference multiplied by $(r_1-r_2)^{-1}$ is $Gd$, which is the same throughout
 
 first compare to existing characters in SEE{}:
 
@@ -97,7 +99,7 @@ for i in tqdm([0,1,2,3,4,5,6,7,-2,-1]):
 
 and we get `5345457b.5..737.5.7..5..737.5....5.d....5.737.75.5.57.7.5.73...7....74757..55..4..7374.....775..73...57.7d`
 
-for remaining digits:
+For remaining digits:
 
 ```
 for i in tqdm(range(len(flag))):
