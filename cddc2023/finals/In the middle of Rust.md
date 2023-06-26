@@ -1,6 +1,7 @@
 # In the middle of Rust
 
 Tags: rev
+
 we are given a [challenge.mir](./challenge.mir). Apparently `mir` (_mid-level_ intermediate reprsentation) is a transient file that the rust compiler uses. It consists of many, many functions (`func001`, `func002`, `func003`, etc...), and a main function.
 
 We decided to do the stupid thing and manually reverse it by hand, painstakingly.
