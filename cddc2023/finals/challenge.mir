@@ -1,0 +1,1902 @@
+
+fn func001(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: (u8, bool);              
+    let mut _4: u8;                      
+    let mut _5: u8;                      
+    let mut _6: (u8, bool);              
+    let mut _7: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _3 = CheckedShr(_2, const 3_i32); 
+        assert(!move (_3.1: bool), "attempt to shift right by `{}`, which would overflow", const 3_i32) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_3.0: u8);            
+        _5 = _0;                         
+        _6 = CheckedMul(_5, const 4_u8); 
+        assert(!move (_6.1: bool), "attempt to compute `{} * {}`, which would overflow", move _5, const 4_u8) -> bb2; 
+    }
+
+    bb2: {
+        _4 = move (_6.0: u8);            
+        _7 = CheckedAdd(_4, const 7_u8); 
+        assert(!move (_7.1: bool), "attempt to compute `{} + {}`, which would overflow", move _4, const 7_u8) -> bb3; 
+    }
+
+    bb3: {
+        _0 = move (_7.0: u8);            
+        return;                          
+    }
+}
+
+fn func002(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: (u8, bool);              
+    let mut _4: u8;                      
+    let mut _5: u8;                      
+    let mut _6: (u8, bool);              
+    let mut _7: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _3 = CheckedShr(_2, const 2_i32); 
+        assert(!move (_3.1: bool), "attempt to shift right by `{}`, which would overflow", const 2_i32) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_3.0: u8);            
+        _5 = _0;                         
+        _6 = CheckedMul(_5, const 4_u8); 
+        assert(!move (_6.1: bool), "attempt to compute `{} * {}`, which would overflow", move _5, const 4_u8) -> bb2; 
+    }
+
+    bb2: {
+        _4 = move (_6.0: u8);            
+        _7 = CheckedAdd(_4, const 20_u8); 
+        assert(!move (_7.1: bool), "attempt to compute `{} + {}`, which would overflow", move _4, const 20_u8) -> bb3; 
+    }
+
+    bb3: {
+        _0 = move (_7.0: u8);            
+        return;                          
+    }
+}
+
+fn func003(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: u8;                      
+    let mut _4: u8;                      
+    let mut _5: (u8, bool);              
+    let mut _6: u8;                      
+    let mut _7: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _0 = BitXor(move _2, const 12_u8); 
+        _4 = _0;                         
+        _3 = Div(move _4, const 3_u8);   
+        _5 = CheckedMul(_3, const 2_u8); 
+        assert(!move (_5.1: bool), "attempt to compute `{} * {}`, which would overflow", move _3, const 2_u8) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_5.0: u8);            
+        _6 = _0;                         
+        _7 = CheckedAdd(_6, const 2_u8); 
+        assert(!move (_7.1: bool), "attempt to compute `{} + {}`, which would overflow", move _6, const 2_u8) -> bb2; 
+    }
+
+    bb2: {
+        _0 = move (_7.0: u8);            
+        return;                          
+    }
+}
+
+fn func004(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: u8;                      
+    let mut _4: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _0 = BitOr(move _2, const 22_u8); 
+        _3 = _0;                         
+        _4 = CheckedAdd(_3, const 4_u8); 
+        assert(!move (_4.1: bool), "attempt to compute `{} + {}`, which would overflow", move _3, const 4_u8) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_4.0: u8);            
+        return;                          
+    }
+}
+
+fn func005(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _3 = CheckedSub(_2, const 40_u8); 
+        assert(!move (_3.1: bool), "attempt to compute `{} - {}`, which would overflow", move _2, const 40_u8) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_3.0: u8);            
+        return;                          
+    }
+}
+
+fn func006(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _3: u8;                      
+    let mut _4: u8;                      
+    let mut _5: (u8, bool);              
+    let mut _6: u8;                      
+    let mut _7: (u8, bool);              
+    let mut _8: u8;                      
+    let mut _9: u8;                      
+    let mut _10: (u8, bool);             
+    scope 1 {
+        debug retn => _0;                
+        let mut _2: u8;                  
+        scope 2 {
+            debug num => _2;             
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = const 4_u8;                 
+        _3 = _0;                         
+        _0 = Rem(move _3, const 5_u8);   
+        _4 = _0;                         
+        _5 = CheckedMul(_4, const 20_u8); 
+        assert(!move (_5.1: bool), "attempt to compute `{} * {}`, which would overflow", move _4, const 20_u8) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_5.0: u8);            
+        _6 = _2;                         
+        _7 = CheckedMul(_6, const 2_u8); 
+        assert(!move (_7.1: bool), "attempt to compute `{} * {}`, which would overflow", move _6, const 2_u8) -> bb2; 
+    }
+
+    bb2: {
+        _2 = move (_7.0: u8);            
+        _8 = _0;                         
+        _9 = _2;                         
+        _10 = CheckedAdd(_8, _9);        
+        assert(!move (_10.1: bool), "attempt to compute `{} + {}`, which would overflow", move _8, move _9) -> bb3; 
+    }
+
+    bb3: {
+        _0 = move (_10.0: u8);           
+        return;                          
+    }
+}
+
+fn func007(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _0 = Div(move _2, const 2_u8);   
+        return;                          
+    }
+}
+
+fn func008(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _0 = BitXor(move _2, const 18_u8); 
+        return;                          
+    }
+}
+
+fn func009(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: u8;                      
+    let mut _4: (u8, bool);              
+    let mut _5: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _3 = _0;                         
+        _4 = CheckedMul(_3, const 3_u8); 
+        assert(!move (_4.1: bool), "attempt to compute `{} * {}`, which would overflow", move _3, const 3_u8) -> bb1; 
+    }
+
+    bb1: {
+        _2 = move (_4.0: u8);            
+        _5 = CheckedAdd(_2, const 15_u8); 
+        assert(!move (_5.1: bool), "attempt to compute `{} + {}`, which would overflow", move _2, const 15_u8) -> bb2; 
+    }
+
+    bb2: {
+        _0 = move (_5.0: u8);            
+        return;                          
+    }
+}
+
+fn func010(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: std::ops::Range<i32>;    
+    let mut _3: std::ops::Range<i32>;    
+    let mut _5: std::option::Option<i32>; 
+    let mut _6: &mut std::ops::Range<i32>; 
+    let mut _7: isize;                   
+    let mut _8: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+        let mut _4: std::ops::Range<i32>; 
+        scope 2 {
+            debug iter => _4;            
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _3 = std::ops::Range::<i32> { start: const 0_i32, end: const 10_i32 }; 
+        _2 = <std::ops::Range<i32> as IntoIterator>::into_iter(move _3) -> bb1; 
+                                         
+    }
+
+    bb1: {
+        _4 = move _2;                    
+        goto -> bb2;                     
+    }
+
+    bb2: {
+        _6 = &mut _4;                    
+        _5 = <std::ops::Range<i32> as Iterator>::next(_6) -> bb3; 
+                                         
+    }
+
+    bb3: {
+        _7 = discriminant(_5);           
+        switchInt(move _7) -> [0: bb6, 1: bb4, otherwise: bb5]; 
+    }
+
+    bb4: {
+        _8 = CheckedAdd(_0, const 1_u8); 
+        assert(!move (_8.1: bool), "attempt to compute `{} + {}`, which would overflow", _0, const 1_u8) -> bb7; 
+    }
+
+    bb5: {
+        unreachable;                     
+    }
+
+    bb6: {
+        return;                          
+    }
+
+    bb7: {
+        _0 = move (_8.0: u8);            
+        goto -> bb2;                     
+    }
+}
+
+fn func011(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _3 = CheckedSub(_2, const 70_u8); 
+        assert(!move (_3.1: bool), "attempt to compute `{} - {}`, which would overflow", move _2, const 70_u8) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_3.0: u8);            
+        return;                          
+    }
+}
+
+fn func012(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _3: u8;                      
+    let mut _4: u8;                      
+    let mut _5: (u8, bool);              
+    let mut _6: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+        let _2: u8;                      
+        scope 2 {
+            debug num => _2;             
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = const 5_u8;                 
+        _4 = _0;                         
+        _5 = CheckedMul(_4, const 2_u8); 
+        assert(!move (_5.1: bool), "attempt to compute `{} * {}`, which would overflow", move _4, const 2_u8) -> bb1; 
+    }
+
+    bb1: {
+        _3 = move (_5.0: u8);            
+        _6 = CheckedSub(_3, _2);         
+        assert(!move (_6.1: bool), "attempt to compute `{} - {}`, which would overflow", move _3, _2) -> bb2; 
+    }
+
+    bb2: {
+        _0 = move (_6.0: u8);            
+        return;                          
+    }
+}
+
+fn func013(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _3 = CheckedAdd(_2, const 50_u8); 
+        assert(!move (_3.1: bool), "attempt to compute `{} + {}`, which would overflow", move _2, const 50_u8) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_3.0: u8);            
+        return;                          
+    }
+}
+
+fn func014(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _3: u8;                      
+    let mut _4: u8;                      
+    let mut _5: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+        let _2: u8;                      
+        scope 2 {
+            debug num => _2;             
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = core::num::<impl u8>::pow(const 3_u8, const 4_u32) -> bb1; 
+                                         
+    }
+
+    bb1: {
+        _3 = _0;                         
+        _4 = _2;                         
+        _5 = CheckedAdd(_3, _4);         
+        assert(!move (_5.1: bool), "attempt to compute `{} + {}`, which would overflow", move _3, move _4) -> bb2; 
+    }
+
+    bb2: {
+        _0 = move (_5.0: u8);            
+        return;                          
+    }
+}
+
+fn func015(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _3: u8;                      
+    let mut _4: u8;                      
+    let mut _5: (u8, bool);              
+    let mut _6: u8;                      
+    let mut _7: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+        let _2: u8;                      
+        scope 2 {
+            debug num => _2;             
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _3 = _0;                         
+        _2 = Div(move _3, const 10_u8);  
+        _4 = _0;                         
+        _5 = CheckedSub(_4, const 20_u8); 
+        assert(!move (_5.1: bool), "attempt to compute `{} - {}`, which would overflow", move _4, const 20_u8) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_5.0: u8);            
+        _6 = _0;                         
+        _7 = CheckedAdd(_6, _2);         
+        assert(!move (_7.1: bool), "attempt to compute `{} + {}`, which would overflow", move _6, _2) -> bb2; 
+    }
+
+    bb2: {
+        _0 = move (_7.0: u8);            
+        return;                          
+    }
+}
+
+fn func016(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: u8;                      
+    let mut _4: u8;                      
+    let mut _5: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _0 = BitAnd(move _2, const 88_u8); 
+        _3 = _0;                         
+        _4 = const 21_u8;                
+        _5 = CheckedAdd(_3, _4);         
+        assert(!move (_5.1: bool), "attempt to compute `{} + {}`, which would overflow", move _3, move _4) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_5.0: u8);            
+        return;                          
+    }
+}
+
+fn func017(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _3: u8;                      
+    let mut _4: (u8, bool);              
+    let mut _5: u8;                      
+    let mut _6: (u8, bool);              
+    let mut _7: u8;                      
+    let mut _8: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+        let _2: u8;                      
+        scope 2 {
+            debug num => _2;             
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = const 5_u8;                 
+        _3 = _0;                         
+        _4 = CheckedShr(_3, const 3_i32); 
+        assert(!move (_4.1: bool), "attempt to shift right by `{}`, which would overflow", const 3_i32) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_4.0: u8);            
+        _5 = _0;                         
+        _6 = CheckedMul(_5, const 6_u8); 
+        assert(!move (_6.1: bool), "attempt to compute `{} * {}`, which would overflow", move _5, const 6_u8) -> bb2; 
+    }
+
+    bb2: {
+        _0 = move (_6.0: u8);            
+        _7 = _0;                         
+        _8 = CheckedAdd(_7, _2);         
+        assert(!move (_8.1: bool), "attempt to compute `{} + {}`, which would overflow", move _7, _2) -> bb3; 
+    }
+
+    bb3: {
+        _0 = move (_8.0: u8);            
+        return;                          
+    }
+}
+
+fn func018(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _3: u8;                      
+    let mut _4: usize;                   
+    let mut _5: u8;                      
+    let mut _6: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+        let _2: &str;                    
+        scope 2 {
+            debug s => _2;               
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = const "fightingkeepgoing";  
+                                         
+        _4 = core::str::<impl str>::len(_2) -> bb1; 
+                                         
+    }
+
+    bb1: {
+        _3 = move _4 as u8 (IntToInt);   
+        _5 = _0;                         
+        _6 = CheckedAdd(_3, _5);         
+        assert(!move (_6.1: bool), "attempt to compute `{} + {}`, which would overflow", move _3, move _5) -> bb2; 
+    }
+
+    bb2: {
+        _0 = move (_6.0: u8);            
+        return;                          
+    }
+}
+
+fn func019(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _3: u8;                      
+    let mut _4: (u8, bool);              
+    let mut _5: u8;                      
+    let mut _6: u8;                      
+    let mut _7: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+        let _2: u8;                      
+        scope 2 {
+            debug num => _2;             
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = core::num::<impl u8>::pow(const 10_u8, const 2_u32) -> bb1; 
+                                         
+    }
+
+    bb1: {
+        _3 = _0;                         
+        _4 = CheckedSub(_3, const 50_u8); 
+        assert(!move (_4.1: bool), "attempt to compute `{} - {}`, which would overflow", move _3, const 50_u8) -> bb2; 
+    }
+
+    bb2: {
+        _0 = move (_4.0: u8);            
+        _5 = _0;                         
+        _6 = _2;                         
+        _7 = CheckedAdd(_5, _6);         
+        assert(!move (_7.1: bool), "attempt to compute `{} + {}`, which would overflow", move _5, move _6) -> bb3; 
+    }
+
+    bb3: {
+        _0 = move (_7.0: u8);            
+        return;                          
+    }
+}
+
+fn func020(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: std::ops::Range<i32>;    
+    let mut _3: std::ops::Range<i32>;    
+    let mut _5: std::option::Option<i32>; 
+    let mut _6: &mut std::ops::Range<i32>; 
+    let mut _7: isize;                   
+    let mut _8: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+        let mut _4: std::ops::Range<i32>; 
+        scope 2 {
+            debug iter => _4;            
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _3 = std::ops::Range::<i32> { start: const 0_i32, end: const 10_i32 }; 
+        _2 = <std::ops::Range<i32> as IntoIterator>::into_iter(move _3) -> bb1; 
+                                         
+    }
+
+    bb1: {
+        _4 = move _2;                    
+        goto -> bb2;                     
+    }
+
+    bb2: {
+        _6 = &mut _4;                    
+        _5 = <std::ops::Range<i32> as Iterator>::next(_6) -> bb3; 
+                                         
+    }
+
+    bb3: {
+        _7 = discriminant(_5);           
+        switchInt(move _7) -> [0: bb6, 1: bb4, otherwise: bb5]; 
+    }
+
+    bb4: {
+        _8 = CheckedAdd(_0, const 3_u8); 
+        assert(!move (_8.1: bool), "attempt to compute `{} + {}`, which would overflow", _0, const 3_u8) -> bb7; 
+    }
+
+    bb5: {
+        unreachable;                     
+    }
+
+    bb6: {
+        return;                          
+    }
+
+    bb7: {
+        _0 = move (_8.0: u8);            
+        goto -> bb2;                     
+    }
+}
+
+fn func021(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _3 = CheckedSub(_2, const 10_u8); 
+        assert(!move (_3.1: bool), "attempt to compute `{} - {}`, which would overflow", move _2, const 10_u8) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_3.0: u8);            
+        return;                          
+    }
+}
+
+fn func022(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _3: u8;                      
+    let mut _4: u8;                      
+    let mut _5: u8;                      
+    let mut _6: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+        let _2: u8;                      
+        scope 2 {
+            debug num => _2;             
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = core::num::<impl u8>::pow(const 3_u8, const 2_u32) -> bb1; 
+                                         
+    }
+
+    bb1: {
+        _3 = _0;                         
+        _0 = Div(move _3, const 11_u8);  
+        _4 = _0;                         
+        _5 = _2;                         
+        _6 = CheckedMul(_4, _5);         
+        assert(!move (_6.1: bool), "attempt to compute `{} * {}`, which would overflow", move _4, move _5) -> bb2; 
+    }
+
+    bb2: {
+        _0 = move (_6.0: u8);            
+        return;                          
+    }
+}
+
+fn func023(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: (u8, bool);              
+    let mut _4: u8;                      
+    let mut _5: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _3 = CheckedShl(_2, const 1_i32); 
+        assert(!move (_3.1: bool), "attempt to shift left by `{}`, which would overflow", const 1_i32) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_3.0: u8);            
+        _4 = _0;                         
+        _5 = CheckedAdd(_4, const 2_u8); 
+        assert(!move (_5.1: bool), "attempt to compute `{} + {}`, which would overflow", move _4, const 2_u8) -> bb2; 
+    }
+
+    bb2: {
+        _0 = move (_5.0: u8);            
+        return;                          
+    }
+}
+
+fn func024(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: u8;                      
+    let mut _4: u8;                      
+    let mut _5: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _3 = _0;                         
+        _2 = core::num::<impl u8>::pow(move _3, const 2_u32) -> bb1; 
+                                         
+    }
+
+    bb1: {
+        _0 = move _2;                    
+        _4 = _0;                         
+        _5 = CheckedAdd(_4, const 3_u8); 
+        assert(!move (_5.1: bool), "attempt to compute `{} + {}`, which would overflow", move _4, const 3_u8) -> bb2; 
+    }
+
+    bb2: {
+        _0 = move (_5.0: u8);            
+        return;                          
+    }
+}
+
+fn func025(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _3: u8;                      
+    let mut _4: u8;                      
+    let mut _5: u8;                      
+    let mut _6: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+        let _2: u8;                      
+        scope 2 {
+            debug num => _2;             
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = const 2_u8;                 
+        _3 = _0;                         
+        _0 = BitOr(move _3, const 26_u8); 
+        _4 = _0;                         
+        _5 = const 8_u8;                 
+        _6 = CheckedAdd(_4, _5);         
+        assert(!move (_6.1: bool), "attempt to compute `{} + {}`, which would overflow", move _4, move _5) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_6.0: u8);            
+        return;                          
+    }
+}
+
+fn func026(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _3 = CheckedAdd(_2, const 30_u8); 
+        assert(!move (_3.1: bool), "attempt to compute `{} + {}`, which would overflow", move _2, const 30_u8) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_3.0: u8);            
+        return;                          
+    }
+}
+
+fn func027(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _4: usize;                   
+    let mut _5: u8;                      
+    let mut _6: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+        let _2: &str;                    
+        scope 2 {
+            debug cheering => _2;        
+            let _3: u8;                  
+            scope 3 {
+                debug num => _3;         
+            }
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = const "almostendkeepgoingcheerup"; 
+                                         
+        _4 = core::str::<impl str>::len(_2) -> bb1; 
+                                         
+    }
+
+    bb1: {
+        _3 = move _4 as u8 (IntToInt);   
+        _5 = _0;                         
+        _6 = CheckedAdd(_5, _3);         
+        assert(!move (_6.1: bool), "attempt to compute `{} + {}`, which would overflow", move _5, _3) -> bb2; 
+    }
+
+    bb2: {
+        _0 = move (_6.0: u8);            
+        return;                          
+    }
+}
+
+fn func028(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    scope 1 {
+        debug retn => _1;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        return;                          
+    }
+}
+
+fn func029(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _3: u8;                      
+    let mut _4: u8;                      
+    let mut _5: (u8, bool);              
+    let mut _6: u8;                      
+    let mut _7: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+        let _2: u8;                      
+        scope 2 {
+            debug num => _2;             
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = const 5_u8;                 
+        _3 = _0;                         
+        _0 = BitXor(move _3, const 80_u8); 
+        _4 = _0;                         
+        _5 = CheckedMul(_4, const 2_u8); 
+        assert(!move (_5.1: bool), "attempt to compute `{} * {}`, which would overflow", move _4, const 2_u8) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_5.0: u8);            
+        _6 = _0;                         
+        _7 = CheckedAdd(_6, _2);         
+        assert(!move (_7.1: bool), "attempt to compute `{} + {}`, which would overflow", move _6, _2) -> bb2; 
+    }
+
+    bb2: {
+        _0 = move (_7.0: u8);            
+        return;                          
+    }
+}
+
+fn func030(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _3: (i32, bool);             
+    let mut _4: (u8, bool);              
+    let mut _5: i32;                     
+    scope 1 {
+        debug retn => _0;                
+        let mut _2: i32;                 
+        scope 2 {
+            debug chk => _2;             
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = const 0_i32;                
+        goto -> bb1;                     
+    }
+
+    bb1: {
+        _3 = CheckedAdd(_2, const 1_i32); 
+        assert(!move (_3.1: bool), "attempt to compute `{} + {}`, which would overflow", _2, const 1_i32) -> bb2; 
+    }
+
+    bb2: {
+        _2 = move (_3.0: i32);           
+        _4 = CheckedAdd(_0, const 1_u8); 
+        assert(!move (_4.1: bool), "attempt to compute `{} + {}`, which would overflow", _0, const 1_u8) -> bb3; 
+    }
+
+    bb3: {
+        _0 = move (_4.0: u8);            
+        _5 = _2;                         
+        switchInt(move _5) -> [8: bb4, otherwise: bb1]; 
+    }
+
+    bb4: {
+        return;                          
+    }
+}
+
+fn func031(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _3: u8;                      
+    let mut _4: u8;                      
+    let mut _5: u8;                      
+    scope 1 {
+        debug retn => _0;                
+        let _2: u8;                      
+        scope 2 {
+            debug num => _2;             
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = const 7_u8;                 
+        _5 = _0;                         
+        _4 = Div(move _5, _2);           
+        _3 = core::num::<impl u8>::pow(move _4, const 2_u32) -> bb1; 
+                                         
+    }
+
+    bb1: {
+        _0 = move _3;                    
+        return;                          
+    }
+}
+
+fn func032(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _3 = CheckedAdd(_2, const 10_u8); 
+        assert(!move (_3.1: bool), "attempt to compute `{} + {}`, which would overflow", move _2, const 10_u8) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_3.0: u8);            
+        return;                          
+    }
+}
+
+fn func033(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: std::ops::Range<i32>;    
+    let mut _3: std::ops::Range<i32>;    
+    let mut _5: std::option::Option<i32>; 
+    let mut _6: &mut std::ops::Range<i32>; 
+    let mut _7: isize;                   
+    let mut _9: i32;                     
+    let mut _10: (u8, bool);             
+    scope 1 {
+        debug retn => _0;                
+        let mut _4: std::ops::Range<i32>; 
+        scope 2 {
+            debug iter => _4;            
+            let _8: i32;                 
+            scope 3 {
+                debug i => _8;           
+            }
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _3 = std::ops::Range::<i32> { start: const 0_i32, end: const 10_i32 }; 
+        _2 = <std::ops::Range<i32> as IntoIterator>::into_iter(move _3) -> bb1; 
+                                         
+    }
+
+    bb1: {
+        _4 = move _2;                    
+        goto -> bb2;                     
+    }
+
+    bb2: {
+        _6 = &mut _4;                    
+        _5 = <std::ops::Range<i32> as Iterator>::next(_6) -> bb3; 
+                                         
+    }
+
+    bb3: {
+        _7 = discriminant(_5);           
+        switchInt(move _7) -> [0: bb6, 1: bb4, otherwise: bb5]; 
+    }
+
+    bb4: {
+        _8 = ((_5 as Some).0: i32);      
+        _9 = Rem(_8, const 2_i32);       
+        switchInt(move _9) -> [0: bb7, otherwise: bb2]; 
+    }
+
+    bb5: {
+        unreachable;                     
+    }
+
+    bb6: {
+        return;                          
+    }
+
+    bb7: {
+        _10 = CheckedAdd(_0, const 1_u8); 
+        assert(!move (_10.1: bool), "attempt to compute `{} + {}`, which would overflow", _0, const 1_u8) -> bb8; 
+    }
+
+    bb8: {
+        _0 = move (_10.0: u8);           
+        goto -> bb2;                     
+    }
+}
+
+fn func034(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    let mut _3: u8;                      
+    let mut _4: (u8, bool);              
+    let mut _5: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _3 = _0;                         
+        _4 = CheckedMul(_3, const 2_u8); 
+        assert(!move (_4.1: bool), "attempt to compute `{} * {}`, which would overflow", move _3, const 2_u8) -> bb1; 
+    }
+
+    bb1: {
+        _2 = move (_4.0: u8);            
+        _5 = CheckedSub(_2, const 10_u8); 
+        assert(!move (_5.1: bool), "attempt to compute `{} - {}`, which would overflow", move _2, const 10_u8) -> bb2; 
+    }
+
+    bb2: {
+        _0 = move (_5.0: u8);            
+        return;                          
+    }
+}
+
+fn func035(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _2: u8;                      
+    scope 1 {
+        debug retn => _0;                
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = _0;                         
+        _0 = Div(move _2, const 2_u8);   
+        return;                          
+    }
+}
+
+fn func036(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _3: u8;                      
+    let mut _4: u8;                      
+    let mut _5: (u8, bool);              
+    let mut _6: u8;                      
+    let mut _7: u8;                      
+    let mut _8: (u8, bool);              
+    let mut _9: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+        let _2: u8;                      
+        scope 2 {
+            debug num => _2;             
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = const 7_u8;                 
+        _3 = _0;                         
+        _0 = BitAnd(move _3, const 12_u8); 
+        _4 = _0;                         
+        _5 = CheckedShl(_4, const 3_i32); 
+        assert(!move (_5.1: bool), "attempt to shift left by `{}`, which would overflow", const 3_i32) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_5.0: u8);            
+        _6 = _0;                         
+        _8 = CheckedMul(_2, const 2_u8); 
+        assert(!move (_8.1: bool), "attempt to compute `{} * {}`, which would overflow", _2, const 2_u8) -> bb2; 
+    }
+
+    bb2: {
+        _7 = move (_8.0: u8);            
+        _9 = CheckedAdd(_6, _7);         
+        assert(!move (_9.1: bool), "attempt to compute `{} + {}`, which would overflow", move _6, move _7) -> bb3; 
+    }
+
+    bb3: {
+        _0 = move (_9.0: u8);            
+        return;                          
+    }
+}
+
+fn func037(_1: u8) -> u8 {
+    debug ch => _1;                      
+    let mut _0: u8;                      
+    let mut _3: u8;                      
+    let mut _4: (u8, bool);              
+    let mut _5: u8;                      
+    let mut _6: u8;                      
+    let mut _7: (u8, bool);              
+    scope 1 {
+        debug retn => _0;                
+        let _2: u8;                      
+        scope 2 {
+            debug num => _2;             
+        }
+    }
+
+    bb0: {
+        _0 = _1;                         
+        _2 = const 5_u8;                 
+        _3 = _0;                         
+        _4 = CheckedShl(_3, const 1_i32); 
+        assert(!move (_4.1: bool), "attempt to shift left by `{}`, which would overflow", const 1_i32) -> bb1; 
+    }
+
+    bb1: {
+        _0 = move (_4.0: u8);            
+        _5 = _0;                         
+        _6 = core::num::<impl u8>::pow(_2, const 2_u32) -> bb2; 
+                                         
+    }
+
+    bb2: {
+        _7 = CheckedAdd(_5, _6);         
+        assert(!move (_7.1: bool), "attempt to compute `{} + {}`, which would overflow", move _5, move _6) -> bb3; 
+    }
+
+    bb3: {
+        _0 = move (_7.0: u8);            
+        return;                          
+    }
+}
+
+fn main() -> () {
+    let mut _0: ();                      
+    let _1: u8;                          
+    let mut _3: u8;                      
+    let mut _6: u8;                      
+    let mut _9: u8;                      
+    let mut _12: u8;                     
+    let mut _15: u8;                     
+    let mut _18: u8;                     
+    let mut _21: u8;                     
+    let mut _24: u8;                     
+    let mut _27: u8;                     
+    let mut _30: u8;                     
+    let mut _33: u8;                     
+    let mut _36: u8;                     
+    let mut _39: u8;                     
+    let mut _42: u8;                     
+    let mut _45: u8;                     
+    let mut _48: u8;                     
+    let mut _51: u8;                     
+    let mut _54: u8;                     
+    let mut _57: u8;                     
+    let mut _60: u8;                     
+    let mut _63: u8;                     
+    let mut _66: u8;                     
+    let mut _69: u8;                     
+    let mut _72: u8;                     
+    let mut _75: u8;                     
+    let mut _78: u8;                     
+    let mut _81: u8;                     
+    let mut _84: u8;                     
+    let mut _87: u8;                     
+    let mut _90: u8;                     
+    let mut _93: u8;                     
+    let mut _96: u8;                     
+    let mut _99: u8;                     
+    let mut _102: u8;                    
+    let mut _105: u8;                    
+    let mut _108: u8;                    
+    let mut _111: u8;                    
+    let _113: ();                        
+    let mut _114: std::fmt::Arguments<'_>; 
+    let mut _115: &[&str];               
+    let mut _116: &[core::fmt::ArgumentV1<'_>]; 
+    let _117: &[core::fmt::ArgumentV1<'_>; 1]; 
+    let _118: [core::fmt::ArgumentV1<'_>; 1]; 
+    let mut _119: core::fmt::ArgumentV1<'_>; 
+    let _120: &[char; 37];               
+    scope 1 {
+        debug ch1 => _1;                 
+        let _2: char;                    
+        scope 2 {
+            debug ch1_char => _2;        
+            let _4: u8;                  
+            scope 3 {
+                debug ch2 => _4;         
+                let _5: char;            
+                scope 4 {
+                    debug ch2_char => _5; 
+                    let _7: u8;          
+                    scope 5 {
+                        debug ch3 => _7; 
+                        let _8: char;    
+                        scope 6 {
+                            debug ch3_char => _8; 
+                            let _10: u8; 
+                            scope 7 {
+                                debug ch4 => _10; 
+                                let _11: char; 
+                                scope 8 {
+                                    debug ch4_char => _11; 
+                                    let _13: u8; 
+                                    scope 9 {
+                                        debug ch5 => _13; 
+                                        let _14: char; 
+                                        scope 10 {
+                                            debug ch5_char => _14; 
+                                            let _16: u8; 
+                                            scope 11 {
+                                                debug ch6 => _16; 
+                                                let _17: char; 
+                                                scope 12 {
+                                                    debug ch6_char => _17; 
+                                                    let _19: u8; 
+                                                    scope 13 {
+                                                        debug ch7 => _19; 
+                                                        let _20: char; 
+                                                        scope 14 {
+                                                            debug ch7_char => _20; 
+                                                            let _22: u8; 
+                                                            scope 15 {
+                                                                debug ch8 => _22; 
+                                                                let _23: char; 
+                                                                scope 16 {
+                                                                    debug ch8_char => _23; 
+                                                                    let _25: u8; 
+                                                                    scope 17 {
+                                                                        debug ch9 => _25; 
+                                                                        let _26: char; 
+                                                                        scope 18 {
+                                                                            debug ch9_char => _26; 
+                                                                            let _28: u8; 
+                                                                            scope 19 {
+                                                                                debug ch10 => _28; 
+                                                                                let _29: char; 
+                                                                                scope 20 {
+                                                                                    debug ch10_char => _29; 
+                                                                                    let _31: u8; 
+                                                                                    scope 21 {
+                                                                                        debug ch11 => _31; 
+                                                                                        let _32: char; 
+                                                                                        scope 22 {
+                                                                                            debug ch11_char => _32; 
+                                                                                            let _34: u8; 
+                                                                                            scope 23 {
+                                                                                                debug ch12 => _34; 
+                                                                                                let _35: char; 
+                                                                                                scope 24 {
+                                                                                                    debug ch12_char => _35; 
+                                                                                                    let _37: u8; 
+                                                                                                    scope 25 {
+                                                                                                        debug ch13 => _37; 
+                                                                                                        let _38: char; 
+                                                                                                        scope 26 {
+                                                                                                            debug ch13_char => _38; 
+                                                                                                            let _40: u8; 
+                                                                                                            scope 27 {
+                                                                                                                debug ch14 => _40; 
+                                                                                                                let _41: char; 
+                                                                                                                scope 28 {
+                                                                                                                    debug ch14_char => _41; 
+                                                                                                                    let _43: u8; 
+                                                                                                                    scope 29 {
+                                                                                                                        debug ch15 => _43; 
+                                                                                                                        let _44: char; 
+                                                                                                                        scope 30 {
+                                                                                                                            debug ch15_char => _44; 
+                                                                                                                            let _46: u8; 
+                                                                                                                            scope 31 {
+                                                                                                                                debug ch16 => _46; 
+                                                                                                                                let _47: char; 
+                                                                                                                                scope 32 {
+                                                                                                                                    debug ch16_char => _47; 
+                                                                                                                                    let _49: u8; 
+                                                                                                                                    scope 33 {
+                                                                                                                                        debug ch17 => _49; 
+                                                                                                                                        let _50: char; 
+                                                                                                                                        scope 34 {
+                                                                                                                                            debug ch17_char => _50; 
+                                                                                                                                            let _52: u8; 
+                                                                                                                                            scope 35 {
+                                                                                                                                                debug ch18 => _52; 
+                                                                                                                                                let _53: char; 
+                                                                                                                                                scope 36 {
+                                                                                                                                                    debug ch18_char => _53; 
+                                                                                                                                                    let _55: u8; 
+                                                                                                                                                    scope 37 {
+                                                                                                                                                        debug ch19 => _55; 
+                                                                                                                                                        let _56: char; 
+                                                                                                                                                        scope 38 {
+                                                                                                                                                            debug ch19_char => _56; 
+                                                                                                                                                            let _58: u8; 
+                                                                                                                                                            scope 39 {
+                                                                                                                                                                debug ch20 => _58; 
+                                                                                                                                                                let _59: char; 
+                                                                                                                                                                scope 40 {
+                                                                                                                                                                    debug ch20_char => _59; 
+                                                                                                                                                                    let _61: u8; 
+                                                                                                                                                                    scope 41 {
+                                                                                                                                                                        debug ch21 => _61; 
+                                                                                                                                                                        let _62: char; 
+                                                                                                                                                                        scope 42 {
+                                                                                                                                                                            debug ch21_char => _62; 
+                                                                                                                                                                            let _64: u8; 
+                                                                                                                                                                            scope 43 {
+                                                                                                                                                                                debug ch22 => _64; 
+                                                                                                                                                                                let _65: char; 
+                                                                                                                                                                                scope 44 {
+                                                                                                                                                                                    debug ch22_char => _65; 
+                                                                                                                                                                                    let _67: u8; 
+                                                                                                                                                                                    scope 45 {
+                                                                                                                                                                                        debug ch23 => _67; 
+                                                                                                                                                                                        let _68: char; 
+                                                                                                                                                                                        scope 46 {
+                                                                                                                                                                                            debug ch23_char => _68; 
+                                                                                                                                                                                            let _70: u8; 
+                                                                                                                                                                                            scope 47 {
+                                                                                                                                                                                                debug ch24 => _70; 
+                                                                                                                                                                                                let _71: char; 
+                                                                                                                                                                                                scope 48 {
+                                                                                                                                                                                                    debug ch24_char => _71; 
+                                                                                                                                                                                                    let _73: u8; 
+                                                                                                                                                                                                    scope 49 {
+                                                                                                                                                                                                        debug ch25 => _73; 
+                                                                                                                                                                                                        let _74: char; 
+                                                                                                                                                                                                        scope 50 {
+                                                                                                                                                                                                            debug ch25_char => _74; 
+                                                                                                                                                                                                            let _76: u8; 
+                                                                                                                                                                                                            scope 51 {
+                                                                                                                                                                                                                debug ch26 => _76; 
+                                                                                                                                                                                                                let _77: char; 
+                                                                                                                                                                                                                scope 52 {
+                                                                                                                                                                                                                    debug ch26_char => _77; 
+                                                                                                                                                                                                                    let _79: u8; 
+                                                                                                                                                                                                                    scope 53 {
+                                                                                                                                                                                                                        debug ch27 => _79; 
+                                                                                                                                                                                                                        let _80: char; 
+                                                                                                                                                                                                                        scope 54 {
+                                                                                                                                                                                                                            debug ch27_char => _80; 
+                                                                                                                                                                                                                            let _82: u8; 
+                                                                                                                                                                                                                            scope 55 {
+                                                                                                                                                                                                                                debug ch28 => _82; 
+                                                                                                                                                                                                                                let _83: char; 
+                                                                                                                                                                                                                                scope 56 {
+                                                                                                                                                                                                                                    debug ch28_char => _83; 
+                                                                                                                                                                                                                                    let _85: u8; 
+                                                                                                                                                                                                                                    scope 57 {
+                                                                                                                                                                                                                                        debug ch29 => _85; 
+                                                                                                                                                                                                                                        let _86: char; 
+                                                                                                                                                                                                                                        scope 58 {
+                                                                                                                                                                                                                                            debug ch29_char => _86; 
+                                                                                                                                                                                                                                            let _88: u8; 
+                                                                                                                                                                                                                                            scope 59 {
+                                                                                                                                                                                                                                                debug ch30 => _88; 
+                                                                                                                                                                                                                                                let _89: char; 
+                                                                                                                                                                                                                                                scope 60 {
+                                                                                                                                                                                                                                                    debug ch30_char => _89; 
+                                                                                                                                                                                                                                                    let _91: u8; 
+                                                                                                                                                                                                                                                    scope 61 {
+                                                                                                                                                                                                                                                        debug ch31 => _91; 
+                                                                                                                                                                                                                                                        let _92: char; 
+                                                                                                                                                                                                                                                        scope 62 {
+                                                                                                                                                                                                                                                            debug ch31_char => _92; 
+                                                                                                                                                                                                                                                            let _94: u8; 
+                                                                                                                                                                                                                                                            scope 63 {
+                                                                                                                                                                                                                                                                debug ch32 => _94; 
+                                                                                                                                                                                                                                                                let _95: char; 
+                                                                                                                                                                                                                                                                scope 64 {
+                                                                                                                                                                                                                                                                    debug ch32_char => _95; 
+                                                                                                                                                                                                                                                                    let _97: u8; 
+                                                                                                                                                                                                                                                                    scope 65 {
+                                                                                                                                                                                                                                                                        debug ch33 => _97; 
+                                                                                                                                                                                                                                                                        let _98: char; 
+                                                                                                                                                                                                                                                                        scope 66 {
+                                                                                                                                                                                                                                                                            debug ch33_char => _98; 
+                                                                                                                                                                                                                                                                            let _100: u8; 
+                                                                                                                                                                                                                                                                            scope 67 {
+                                                                                                                                                                                                                                                                                debug ch34 => _100; 
+                                                                                                                                                                                                                                                                                let _101: char; 
+                                                                                                                                                                                                                                                                                scope 68 {
+                                                                                                                                                                                                                                                                                    debug ch34_char => _101; 
+                                                                                                                                                                                                                                                                                    let _103: u8; 
+                                                                                                                                                                                                                                                                                    scope 69 {
+                                                                                                                                                                                                                                                                                        debug ch35 => _103; 
+                                                                                                                                                                                                                                                                                        let _104: char; 
+                                                                                                                                                                                                                                                                                        scope 70 {
+                                                                                                                                                                                                                                                                                            debug ch35_char => _104; 
+                                                                                                                                                                                                                                                                                            let _106: u8; 
+                                                                                                                                                                                                                                                                                            scope 71 {
+                                                                                                                                                                                                                                                                                                debug ch36 => _106; 
+                                                                                                                                                                                                                                                                                                let _107: char; 
+                                                                                                                                                                                                                                                                                                scope 72 {
+                                                                                                                                                                                                                                                                                                    debug ch36_char => _107; 
+                                                                                                                                                                                                                                                                                                    let _109: u8; 
+                                                                                                                                                                                                                                                                                                    scope 73 {
+                                                                                                                                                                                                                                                                                                        debug ch37 => _109; 
+                                                                                                                                                                                                                                                                                                        let _110: char; 
+                                                                                                                                                                                                                                                                                                        scope 74 {
+                                                                                                                                                                                                                                                                                                            debug ch37_char => _110; 
+                                                                                                                                                                                                                                                                                                            let _112: [char; 37]; 
+                                                                                                                                                                                                                                                                                                            scope 75 {
+                                                                                                                                                                                                                                                                                                                debug flag => _112; 
+                                                                                                                                                                                                                                                                                                                let mut _121: &[&str; 2]; 
+                                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                }
+                                                                                                                                                                                            }
+                                                                                                                                                                                        }
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                        }
+                                                                                                                                                                    }
+                                                                                                                                                                }
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    }
+                                                                                                                                                }
+                                                                                                                                            }
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    bb0: {
+        _1 = func001(const 126_u8) -> bb1; 
+                                         
+    }
+
+    bb1: {
+        _3 = _1;                         
+        _2 = move _3 as char (IntToInt); 
+        _4 = func002(const 51_u8) -> bb2; 
+                                         
+    }
+
+    bb2: {
+        _6 = _4;                         
+        _5 = move _6 as char (IntToInt); 
+        _7 = func003(const 111_u8) -> bb3; 
+                                         
+    }
+
+    bb3: {
+        _9 = _7;                         
+        _8 = move _9 as char (IntToInt); 
+        _10 = func004(const 43_u8) -> bb4; 
+                                         
+    }
+
+    bb4: {
+        _12 = _10;                       
+        _11 = move _12 as char (IntToInt); 
+        _13 = func005(const 90_u8) -> bb5; 
+                                         
+    }
+
+    bb5: {
+        _15 = _13;                       
+        _14 = move _15 as char (IntToInt); 
+        _16 = func006(const 57_u8) -> bb6; 
+                                         
+    }
+
+    bb6: {
+        _18 = _16;                       
+        _17 = move _18 as char (IntToInt); 
+        _19 = func007(const 100_u8) -> bb7; 
+                                         
+    }
+
+    bb7: {
+        _21 = _19;                       
+        _20 = move _21 as char (IntToInt); 
+        _22 = func008(const 33_u8) -> bb8; 
+                                         
+    }
+
+    bb8: {
+        _24 = _22;                       
+        _23 = move _24 as char (IntToInt); 
+        _25 = func009(const 36_u8) -> bb9; 
+                                         
+    }
+
+    bb9: {
+        _27 = _25;                       
+        _26 = move _27 as char (IntToInt); 
+        _28 = func010(const 109_u8) -> bb10; 
+                                         
+    }
+
+    bb10: {
+        _30 = _28;                       
+        _29 = move _30 as char (IntToInt); 
+        _31 = func011(const 118_u8) -> bb11; 
+                                         
+    }
+
+    bb11: {
+        _33 = _31;                       
+        _32 = move _33 as char (IntToInt); 
+        _34 = func012(const 62_u8) -> bb12; 
+                                         
+    }
+
+    bb12: {
+        _36 = _34;                       
+        _35 = move _36 as char (IntToInt); 
+        _37 = func013(const 45_u8) -> bb13; 
+                                         
+    }
+
+    bb13: {
+        _39 = _37;                       
+        _38 = move _39 as char (IntToInt); 
+        _40 = func014(const 8_u8) -> bb14; 
+                                         
+    }
+
+    bb14: {
+        _42 = _40;                       
+        _41 = move _42 as char (IntToInt); 
+        _43 = func015(const 90_u8) -> bb15; 
+                                         
+    }
+
+    bb15: {
+        _45 = _43;                       
+        _44 = move _45 as char (IntToInt); 
+        _46 = func016(const 101_u8) -> bb16; 
+                                         
+    }
+
+    bb16: {
+        _48 = _46;                       
+        _47 = move _48 as char (IntToInt); 
+        _49 = func017(const 120_u8) -> bb17; 
+                                         
+    }
+
+    bb17: {
+        _51 = _49;                       
+        _50 = move _51 as char (IntToInt); 
+        _52 = func018(const 50_u8) -> bb18; 
+                                         
+    }
+
+    bb18: {
+        _54 = _52;                       
+        _53 = move _54 as char (IntToInt); 
+        _55 = func019(const 67_u8) -> bb19; 
+                                         
+    }
+
+    bb19: {
+        _57 = _55;                       
+        _56 = move _57 as char (IntToInt); 
+        _58 = func020(const 54_u8) -> bb20; 
+                                         
+    }
+
+    bb20: {
+        _60 = _58;                       
+        _59 = move _60 as char (IntToInt); 
+        _61 = func021(const 105_u8) -> bb21; 
+                                         
+    }
+
+    bb21: {
+        _63 = _61;                       
+        _62 = move _63 as char (IntToInt); 
+        _64 = func022(const 121_u8) -> bb22; 
+                                         
+    }
+
+    bb22: {
+        _66 = _64;                       
+        _65 = move _66 as char (IntToInt); 
+        _67 = func023(const 40_u8) -> bb23; 
+                                         
+    }
+
+    bb23: {
+        _69 = _67;                       
+        _68 = move _69 as char (IntToInt); 
+        _70 = func024(const 7_u8) -> bb24; 
+                                         
+    }
+
+    bb24: {
+        _72 = _70;                       
+        _71 = move _72 as char (IntToInt); 
+        _73 = func025(const 66_u8) -> bb25; 
+                                         
+    }
+
+    bb25: {
+        _75 = _73;                       
+        _74 = move _75 as char (IntToInt); 
+        _76 = func026(const 65_u8) -> bb26; 
+                                         
+    }
+
+    bb26: {
+        _78 = _76;                       
+        _77 = move _78 as char (IntToInt); 
+        _79 = func027(const 41_u8) -> bb27; 
+                                         
+    }
+
+    bb27: {
+        _81 = _79;                       
+        _80 = move _81 as char (IntToInt); 
+        _82 = func028(const 101_u8) -> bb28; 
+                                         
+    }
+
+    bb28: {
+        _84 = _82;                       
+        _83 = move _84 as char (IntToInt); 
+        _85 = func029(const 70_u8) -> bb29; 
+                                         
+    }
+
+    bb29: {
+        _87 = _85;                       
+        _86 = move _87 as char (IntToInt); 
+        _88 = func030(const 100_u8) -> bb30; 
+                                         
+    }
+
+    bb30: {
+        _90 = _88;                       
+        _89 = move _90 as char (IntToInt); 
+        _91 = func031(const 77_u8) -> bb31; 
+                                         
+    }
+
+    bb31: {
+        _93 = _91;                       
+        _92 = move _93 as char (IntToInt); 
+        _94 = func032(const 85_u8) -> bb32; 
+                                         
+    }
+
+    bb32: {
+        _96 = _94;                       
+        _95 = move _96 as char (IntToInt); 
+        _97 = func033(const 106_u8) -> bb33; 
+                                         
+    }
+
+    bb33: {
+        _99 = _97;                       
+        _98 = move _99 as char (IntToInt); 
+        _100 = func034(const 45_u8) -> bb34; 
+                                         
+    }
+
+    bb34: {
+        _102 = _100;                     
+        _101 = move _102 as char (IntToInt); 
+        _103 = func035(const 102_u8) -> bb35; 
+                                         
+    }
+
+    bb35: {
+        _105 = _103;                     
+        _104 = move _105 as char (IntToInt); 
+        _106 = func036(const 43_u8) -> bb36; 
+                                         
+    }
+
+    bb36: {
+        _108 = _106;                     
+        _107 = move _108 as char (IntToInt); 
+        _109 = func037(const 50_u8) -> bb37; 
+                                         
+    }
+
+    bb37: {
+        _111 = _109;                     
+        _110 = move _111 as char (IntToInt); 
+        _112 = [_2, _5, _8, _11, _14, _17, _20, _23, _26, _29, _32, _35, _38, _41, _44, _47, _50, _53, _56, _59, _62, _65, _68, _71, _74, _77, _80, _83, _86, _89, _92, _95, _98, _101, _104, _107, _110]; 
+        _121 = const _;                  
+                                         
+        _115 = _121 as &[&str] (Pointer(Unsize)); 
+        _120 = &_112;                    
+        _119 = core::fmt::ArgumentV1::<'_>::new_debug::<[char; 37]>(_120) -> bb38; 
+                                         
+    }
+
+    bb38: {
+        _118 = [move _119];              
+        _117 = &_118;                    
+        _116 = _117 as &[core::fmt::ArgumentV1<'_>] (Pointer(Unsize)); 
+        _114 = Arguments::<'_>::new_v1(move _115, move _116) -> bb39; 
+                                         
+    }
+
+    bb39: {
+        _113 = _print(move _114) -> bb40; 
+                                         
+    }
+
+    bb40: {
+        return;                          
+    }
+}
+
+promoted[0] in main: &[&str; 2] = {
+    let mut _0: &[&str; 2];              
+    let mut _1: [&str; 2];               
+
+    bb0: {
+        _1 = [const "", const "\n"];     
+                                         
+        _0 = &_1;                        
+        return;                          
+    }
+}
