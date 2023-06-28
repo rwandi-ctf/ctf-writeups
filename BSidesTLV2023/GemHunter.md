@@ -5,6 +5,7 @@ Category: Rev (SPOILER: this is a scam)
 We are given a [BestGame.zip](./BestGame.zip), that contains, well a unity game, in which you collect coins and touch the prize. However, no flag appears upon completion of the game. Maybe it is hidden somewhere?
 
 We put the `GameAssembly.dll` into [dnSpy](https://github.com/dnSpy/dnSpy) and we see that it is il2cpp:
+
 ![Section #1 of the dll has the name "il2cpp"](GemHunterPic1.png)
 
 Since this is in the rev category, let's use [Cpp2IL](https://github.com/SamboyCoding/Cpp2IL) to try to get back the c# code.
