@@ -3,6 +3,7 @@ random stuff
 
 From newest to oldest:
 
+- [BSidesTLV2023](./BSidesTLV2023)
 - [cddc2023/finals](./cddc2023/finals/)
 - [seetf2023](./seetf2023/)
 - [cddc2023/training](./cddc2023/training/)
