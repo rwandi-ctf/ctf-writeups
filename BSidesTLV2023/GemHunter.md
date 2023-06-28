@@ -67,4 +67,23 @@ private void OnTriggerEnter2D(Collider2D other)
 
 It looks like we can just un-base64 the `"EDQ+NDB2qwFWuyhgVCwFO2yLNF/KcDcGIyMKTIwSTLorJho="` but that gives us gibberish.
 
-It looks like when we touch prize, a certain textbox somewhere gets updated with the flag. But where is the textbox?
+From these two lines:
+```
+if (other.gameObject.CompareTag("Prize") && coinCount == 12)
+...
+flag.text = text;
+```
+It looks like when we touch prize with exactly 12 coin count, a certain textbox somewhere gets updated with the flag. But there is no text box in sight.
+
+But then I had a very good idea. I resized the window.
+
+![Resizing the window](GemHunterPic2.png)
+![The actual size doesn't matter, just that it fills the screen](GemHunterPic3.png)
+
+See, resizing the window gave me a whole new perspective and I was able to see a flag I couldn't have seen before.
+
+![The flag was hidden outside the screen all along](GemHunterPic4.png)
+
+(You can also see it by clicking the window and dragging it up)
+
+I used [Actual Window Manager](https://www.actualtools.com/windowmanager/) to resize but anything works.
