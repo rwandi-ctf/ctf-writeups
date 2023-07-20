@@ -5,7 +5,7 @@
 
 I first tried https://latek.amt.rs/document/flag.txt and got
 
-```
+```tex
 foo 1
 foo 2
 \textbf{foo 3}
@@ -26,7 +26,7 @@ So we can read files in LaTeX:
 
 Which gives us this again:
 
-```
+```tex
 foo 1
 foo 2
 \textbf{foo 3}
