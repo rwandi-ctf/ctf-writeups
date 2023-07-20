@@ -3,7 +3,10 @@ random stuff
 
 From newest to oldest:
 
+- [amateursCTF](./amateursctf2023)
+- UIUCTF2023
 - [BSidesTLV2023](./BSidesTLV2023)
+- Google Capture The Flag 2023
 - [cddc2023/finals](./cddc2023/finals/)
 - [seetf2023](./seetf2023/)
 - [cddc2023/training](./cddc2023/training/)
