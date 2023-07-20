@@ -46,7 +46,12 @@ Or just open the archive without unzipping and you see both files.
 
 Now stare into the zip again, and you find that at the start, before "flag0.txt" is shown, the duplicate "flag/flag201.txt" and some suspicious entry "flag/" are shown. Note that `H,*Q0` appears after both but not the other files, so you might suspect these files to start with similar contents, which means the "flag/" might contain useful information.
 
-At the end, you also find multiple entries of "flag/../flag" which all seem to have the same contents, and wonder what those could be.
+Use unzip to unzip it:
+`unzip -p flag.zip flag/`
 
-<to be continued>
+Alternatively use some zip extractor like https://www.countingcharacters.com/unzip-files (first one I could find that works)
+
+You get part 2: `Part 2: in5id3_4_`
+
+The full flag is `amateursCTF{z1PP3d_in5id3_4_laY3r_0f_Zips}`
 
