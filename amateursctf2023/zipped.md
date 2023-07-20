@@ -26,11 +26,13 @@ Part 1: amateursCTF{z1PP3d_
 ```
 
 Part 1 is immediately obvious at the very end of the file.
+
 `amateursCTF{z1PP3d_???...???`
 
 Use Control+F to search for "part" (or some other method) and you find
 ` ýAa   flag/Part 3: laY3r_0fPK    úDðVî/mâ1   /     `
 in the middle of the file. This is part 3.
+
 `amateursCTF{z1PP3d_???laY3r_0f???`
 
 Now unzip the zip.
