@@ -5,7 +5,7 @@ So we are given an image, a script, and a modified image.
 
 The script:
 
-```
+```py
 from PIL import Image
 
 def encode_lsb(image_path, message):
@@ -60,10 +60,13 @@ The script finds pixels with a red value greater than the green or blue value, t
 So, to get the flag we do the same thing, but instead of modifying the image, we read from the modified image.
 
 This means replace this line:
-`r = (r & 0xFD) | (int(binary_message[char_index]) << 1)`
-
-With
-`value = modified_r % 4 // 2`
+```py
+r = (r & 0xFD) | (int(binary_message[char_index]) << 1)
+```
+with
+```py
+value = modified_r % 4 // 2
+```
 
 This gives you this binary:
 ```01100001 01101101 01100001 01110100 01100101 01110101 01110010 01110011 01000011 01010100 01000110 01111011 00110011 01110110 00110011 01110010 01111001 00110000 01101110 00110011 01011111 01100100 00110011 01100110 00110001 01101110 00110001 01110100 00110011 01101100 01111001 01011111 01101100 00110000 01110110 00110011 01110011 01011111 01110011 01110100 00110011 01100111 00110000 01011111 01101101 01101000 01101101 01101000 01101101 01101000 01101101 01101000 01101101 01111101```
