@@ -68,7 +68,27 @@ with
 value = modified_r % 4 // 2
 ```
 
+My code:
+```im = np.array(Image.open('rules-iceberg.png'))
+im2 = np.array(Image.open('new-rules-iceberg.png'))
+count = 0
+msg = ""
+charindex = 0
+for i in range(1205):
+    for j in range(725):
+        k = 0
+        if im[i, j, 0] > im[i, j, 1] and im[i,j,0] > im[i,j,2]: #r > g and r > b
+            charindex += 1
+            msg += str(im2[i,j,0] % 4 // 2)
+            if (len(msg)% 9 == 8):
+                msg += " "
+        if charindex == 432:
+            break;
+print(msg)```
+
+
 This gives you this binary:
 ```01100001 01101101 01100001 01110100 01100101 01110101 01110010 01110011 01000011 01010100 01000110 01111011 00110011 01110110 00110011 01110010 01111001 00110000 01101110 00110011 01011111 01100100 00110011 01100110 00110001 01101110 00110001 01110100 00110011 01101100 01111001 01011111 01101100 00110000 01110110 00110011 01110011 01011111 01110011 01110100 00110011 01100111 00110000 01011111 01101101 01101000 01101101 01101000 01101101 01101000 01101101 01101000 01101101 01111101```
 
 Which translates to a flag
+`amateursCTF{3v3ry0n3_d3f1n1t3ly_l0v3s_st3g0_mhmhmhmhm}`
