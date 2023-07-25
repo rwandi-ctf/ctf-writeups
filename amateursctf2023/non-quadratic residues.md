@@ -61,6 +61,7 @@ flags = GF(b)(pow(n,-1,b)).nth_root(210,all=True)
 This however, returns not a single value, but a list of 210 possible numbers that all satisfy this condition. So, all we have to do is iterate through them and check which one is the flag.
 
 ```py
+from Crypto.Util.number import *
 [long_to_bytes(int(f)) for f in flags if long_to_bytes(int(f)).startswith(b"ama")]
 ```
 
