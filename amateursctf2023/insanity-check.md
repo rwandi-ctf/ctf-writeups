@@ -37,11 +37,13 @@ Good job for reading the rules. Here's your sanity check flag: `amateursCTF{be_h
 ## vv anything in the red box is disallowed (yes that means flag hoarding is banned)
 ```
 
-This is clearly different from what appeared on my phone, probably caused by Discord iOS rendering the list numbering with consecutive numbers that start from the first number actually typed (`107122414347637` in this case), whereas the Windows client just starts it with 1.
+This is clearly different from what appeared on my phone, likely caused by Discord iOS rendering the list numbering with consecutive numbers that start from the first number actually typed (`107122414347637` in this case), whereas the Windows client just starts it with 1.
+
+(This might be due to the desktop client using HTML to render Markdown, while the iOS app, built with React Native, uses a different parser. More about HTML converted from Markdown [here](https://daringfireball.net/projects/markdown/syntax#list))
 
 I didn't notice anything else of interest, so I started working on the numbers. I first tried converting them from decimal to hex individually, then converting that into text... oh it worked lol
 
-[CyberChef Recipe](https://gchq.github.io/CyberChef/#recipe=Fork('%5C%5Cn','',false)To_Base(16)Merge(true)From_Hex('Auto')&input=MTA3MTIyNDE0MzQ3NjM3CjEyNTgzOTM3NjQwMjA0MwoxMjI1MjQ0MTg2NjIyNjUKMTIyNTQ5OTAyNDA1NDkzCjEyMTM3NzM3Njc4OTg4NQ)
+[CyberChef recipe to obtain the flag](https://gchq.github.io/CyberChef/#recipe=Fork('%5C%5Cn','',false)To_Base(16)Merge(true)From_Hex('Auto')&input=MTA3MTIyNDE0MzQ3NjM3CjEyNTgzOTM3NjQwMjA0MwoxMjI1MjQ0MTg2NjIyNjUKMTIyNTQ5OTAyNDA1NDkzCjEyMTM3NzM3Njc4OTg4NQ)
 
 flag: `amateursCTF{oops_you_found_me}`
 
