@@ -57,6 +57,7 @@ this.vars.flag = [239,202,230,114,17,147,199,39,182,230,119,248,78,246,224,46,99
 
 From this point on I will not include the `this.vars` or `this.stage.vars` and simply refer them directly to the base variable name
 
+> Side Note: Hosting this locally is good because I can clone the project and modify one project such that I can always ensure whenever I try to simplify the code I am not changing the result
 
 ### Start
 We start from the green flag clicked function that receives the inputted flag (it is in `TheBall.js whenGreenFlagClicked()`)
