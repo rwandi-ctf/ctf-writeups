@@ -56,7 +56,7 @@ So what is `__builtins__`?
 
 Typing it into python gives `<module 'builtins' (built-in)>`, so I guess I can use `__builtins__.???` to access some things?
 
-![image](builtins.png)
+![builtins](images/builtins.png)
 
 Indeed, there seem to be many of the **builtin** functions like `any`, `format`, and of course, `print`. Who would have thought?
 
@@ -190,7 +190,7 @@ Jesus christ, no brackets = no functions. How is this possible?
 
 In Censorship Lite, I had initially thought of leaking data by seeing when errors were thrown, but quickly realized that it actually printed the error message. Here, since the error message isn't printed, we would actually have to leak it by looking at whether an error is thrown.
 
-![image](colon.png)
+![colon](images/colon.png)
 
 Ok, so if I repeatedly index a list at index n, and slowly increase the length of the list, an error won't be thrown anymore when its length = n+1, so I can figure out n.
 
