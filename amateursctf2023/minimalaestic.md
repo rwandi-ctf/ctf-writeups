@@ -252,7 +252,7 @@ for key in keys:
 keytable
 ```
 
-![image](schedulekey.png)
+![schedulekey](images/schedulekey.png)
 
 Oh my god. To my horror or maybe delight, `schedule_key` literally somehow returns the same exact key. Until now, I have no idea why, but its likely because they chose a function where 0,1,175 would all return themselves.
 
