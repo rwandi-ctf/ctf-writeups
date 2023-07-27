@@ -3,8 +3,8 @@ random stuff
 
 From newest to oldest:
 
-- [ImaginaryCTF](./ImaginaryCTF2023)
-- [amateursCTF](./amateursctf2023)
+- [ImaginaryCTF2023](./ImaginaryCTF2023)
+- [amateursCTF2023](./amateursctf2023)
 - UIUCTF2023
 - [BSidesTLV2023](./BSidesTLV2023)
 - Google Capture The Flag 2023
