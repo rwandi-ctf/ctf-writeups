@@ -3,7 +3,7 @@ random stuff
 
 From newest to oldest:
 
-- [TFCTF2023](./TFCCTF2023)
+- [TFCCTF2023](./TFCCTF2023)
 - [ImaginaryCTF2023](./ImaginaryCTF2023)
 - [amateursCTF2023](./amateursctf2023)
 - UIUCTF2023
