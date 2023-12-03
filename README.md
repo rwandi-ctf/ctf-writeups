@@ -1,8 +1,10 @@
 # ctf-writeups
 random stuff
 
-From newest to oldest:
+From newest to oldest, list of competitions we participated in (only those with writeups have a hyperlink):
 
+- [BlahajCTF2023](./BlahajCTF2023)
+- GlacierCTF2023
 - [TFCCTF2023](./TFCCTF2023)
 - [ImaginaryCTF2023](./ImaginaryCTF2023)
 - [amateursCTF2023](./amateursctf2023)
