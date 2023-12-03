@@ -14,7 +14,7 @@ This has two parts, a streamreader that decompresses the base64 string, and then
 
 > “Invoke expressions” (IEX) in PowerShell are a common method of executing code.
 
-either way, if we remove the ` | & ( $eNV:COmSpEC[4,26,25]-join'')` part, we get:
+To see what sort os code is being run, we remove the ` | & ( $eNV:COmSpEC[4,26,25]-join'')` part and paste it into powershell, and we get this output:
 
 ```powershell
 SeT-iTEM VARIAblE:La3S ( [type]("{8}{10}{1}{11}{0}{7}{2}{6}{5}{9}{4}{3}" -F'Ri','m.sEc','ry','E','PheRmoD','T','p','ty.C','SYs','OgRAPhY.cI','te','U')  )  ;  SET-vArIAblE  ("yI"+"n") ([tYPE]("{2}{0}{4}{3}{1}"-F'Yst','cODInG','S','XT.EN','Em.Te')  )  ;SeT-ITEM ('V'+'ARiabLE:'+'g'+'fXn5D') ( [TyPE]("{1}{3}{2}{0}"-f'FiLe','sY','.Io.','STEM')  )  ;  function EfA`BSC {
@@ -64,7 +64,8 @@ foreach ($p in $pf) {
 }
 ```
 
-after quite some cleaning up of the code we get this:
+after quite some cleaning up of the code we get this (I dont think this is perfect powershell code but you get the idea):
+
 ```powershell
 $cd = Get-Date
 if ($cd.month == 4 && cd.Day == 20) {
@@ -134,7 +135,7 @@ Another thing to note is that the IV and `"devilscannotlie!"` are appended at th
 00006010 67 78 68 31:79 31 55 55|31 58 4D 34:51 72 34 71 gxh1y1UU1XM4Qr4q
 ```
 
-once we remove those, we use the key to decrypt the image:
+so we can get the IV and decrypt the image:
 
 ```py
 from Crypto.Cipher import AES
@@ -143,4 +144,6 @@ cipher = AES.new(key, AES.MODE_CBC, iv=b"gxh1y1UU1XM4Qr4q")
 open("flagg.png","wb").write(cipher.decrypt(open("flag.png (1).enc","rb").read()[:-32])[:-12])
 ```
 
-wait this script errors for me @cakular pls help
+![](https://media.discordapp.net/attachments/1180409218268942367/1180738216786153492/image.png?ex=657e8327&is=656c0e27&hm=de7dab529223e9025956e29d8d120418061bc0ceafd3b79a2515bff8ce7cb561&=&format=png)
+
+`blahaj{6r0v3l_hum4n!_1_4m_p0w3r!}`
