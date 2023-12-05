@@ -1,4 +1,6 @@
 # ctf-writeups
+# now at https://github.com/rwandi-ctf/rwandi-ctf.github.io
+
 random stuff
 
 From newest to oldest, list of competitions we participated in (only those with writeups have a hyperlink):
